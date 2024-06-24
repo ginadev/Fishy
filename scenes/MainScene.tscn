@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvd03tyld3qfy"]
+
+[ext_resource type="PackedScene" uid="uid://cmfshg5lp7tx6" path="res://scenes/Player.tscn" id="1_xgln7"]
+[ext_resource type="Script" path="res://scripts/FishSpawner.gd" id="3_d65a4"]
+
+[sub_resource type="Gradient" id="Gradient_3j1dl"]
+offsets = PackedFloat32Array(0.00324675, 1)
+colors = PackedColorArray(0.290015, 0.503674, 1, 1, 0.423529, 0.211765, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0o7q1"]
+gradient = SubResource("Gradient_3j1dl")
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(557, 322)
+scale = Vector2(5.125, 704)
+texture = SubResource("GradientTexture1D_0o7q1")
+
+[node name="Player" parent="." instance=ExtResource("1_xgln7")]
+position = Vector2(666, 298)
+
+[node name="FishSpawner" type="Node" parent="."]
+script = ExtResource("3_d65a4")
