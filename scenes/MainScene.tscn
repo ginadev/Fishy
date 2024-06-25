@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvd03tyld3qfy"]
+[gd_scene load_steps=6 format=3 uid="uid://cvd03tyld3qfy"]
 
 [ext_resource type="PackedScene" uid="uid://cmfshg5lp7tx6" path="res://scenes/Player.tscn" id="1_xgln7"]
 [ext_resource type="Script" path="res://scripts/FishSpawner.gd" id="3_d65a4"]
+[ext_resource type="PackedScene" uid="uid://cr8g7bca3c56s" path="res://scenes/StartGame.tscn" id="3_tyotp"]
 
 [sub_resource type="Gradient" id="Gradient_3j1dl"]
 offsets = PackedFloat32Array(0.00324675, 1)
@@ -19,8 +20,10 @@ scale = Vector2(2.83194, 1297.88)
 texture = SubResource("GradientTexture1D_0o7q1")
 
 [node name="Player" parent="." instance=ExtResource("1_xgln7")]
-position = Vector2(666, 298)
-move_speed = 5.0
+position = Vector2(645, 298)
 
 [node name="FishSpawner" type="Node" parent="."]
 script = ExtResource("3_d65a4")
+
+[node name="StartingScene" parent="." instance=ExtResource("3_tyotp")]
+z_index = 10

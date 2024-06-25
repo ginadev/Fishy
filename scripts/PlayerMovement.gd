@@ -9,7 +9,6 @@ var fish_scale = 0.08
 func _ready():
 	size = 1
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var input = Input.get_vector("move_left","move_right","move_up","move_down").normalized()

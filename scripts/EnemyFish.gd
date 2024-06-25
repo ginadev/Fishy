@@ -3,6 +3,10 @@ class_name EnemyFish
 
 var distance_travelled : float
 var distance_to_end = 1920 + 500
+var blue_fish_texture = preload("res://assets/blue_fish.png")
+var yellow_fish_texture = preload("res://assets/yellow_fish.png")
+var orange_fish_texture = preload("res://assets/orange_fish.png")
+var pink_fish_texture = preload("res://assets/pink_fish.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,8 +20,10 @@ func _ready():
 	direction = Vector2(1, 0)
 	#randomize size of fish
 	size = randf_range(0, 4)
-	scale = Vector2(size, size)
 	#change fish scale
+	scale = Vector2(size, size)
+	# Randomly set the fish color
+	randomize_fish_color()
 
 func _process(delta):
 	position += direction * move_speed
@@ -38,3 +44,8 @@ func _on_body_entered(body : Node):
 			print("Eaten by a bigger fish, size: " + str(size))
 			body.queue_free()
 			_die()
+			
+# Method to randomly set the fish color
+func randomize_fish_color():
+	var fish_textures = [blue_fish_texture, yellow_fish_texture, orange_fish_texture, pink_fish_texture]
+	sprite_2d.texture = fish_textures[randi() % fish_textures.size()]

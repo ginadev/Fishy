@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr8g7bca3c56s"]
+
+[ext_resource type="Script" path="res://scripts/StartGame.gd" id="1_ir12a"]
+[ext_resource type="FontFile" uid="uid://bmv3yeus5natr" path="res://assets/fonts/PixelOperator8.ttf" id="1_jtab3"]
+[ext_resource type="Texture2D" uid="uid://byt3hdskwcsvn" path="res://assets/blue_fish.png" id="2_1aco1"]
+[ext_resource type="Texture2D" uid="uid://dtx38xlfpech8" path="res://assets/orange_fish.png" id="3_p160c"]
+[ext_resource type="Texture2D" uid="uid://b2od6ak4vb5mr" path="res://assets/pink_fish.png" id="4_alob1"]
+[ext_resource type="Texture2D" uid="uid://dxecm6gvmyvy7" path="res://assets/yellow_fish.png" id="5_bar4e"]
+
+[node name="StartingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ir12a")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 119.0
+offset_right = 871.0
+offset_bottom = 484.0
+
+[node name="New Game Button" type="Button" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 521.0
+offset_top = 395.0
+offset_right = 629.0
+offset_bottom = 437.0
+theme_override_fonts/font = ExtResource("1_jtab3")
+text = "New Game"
+
+[node name="Choose Fish Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 165.0
+offset_right = 853.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("1_jtab3")
+theme_override_font_sizes/font_size = 40
+text = "Choose your fish:"
+
+[node name="Fish Options" type="Node" parent="."]
+
+[node name="Blue Fish" type="Button" parent="Fish Options"]
+z_index = 10
+offset_left = 333.0
+offset_top = 247.0
+offset_right = 436.0
+offset_bottom = 346.0
+icon = ExtResource("2_1aco1")
+expand_icon = true
+
+[node name="Orange Fish" type="Button" parent="Fish Options"]
+z_index = 10
+offset_left = 462.0
+offset_top = 247.0
+offset_right = 565.0
+offset_bottom = 346.0
+icon = ExtResource("3_p160c")
+expand_icon = true
+
+[node name="Pink Fish" type="Button" parent="Fish Options"]
+z_index = 10
+offset_left = 591.0
+offset_top = 246.0
+offset_right = 694.0
+offset_bottom = 345.0
+icon = ExtResource("4_alob1")
+expand_icon = true
+
+[node name="Yellow Fish" type="Button" parent="Fish Options"]
+z_index = 10
+offset_left = 720.0
+offset_top = 246.0
+offset_right = 823.0
+offset_bottom = 345.0
+icon = ExtResource("5_bar4e")
+expand_icon = true
+
+[connection signal="pressed" from="New Game Button" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="Fish Options/Blue Fish" to="." method="_on_blue_fish_pressed"]
+[connection signal="pressed" from="Fish Options/Orange Fish" to="." method="_on_orange_fish_pressed"]
+[connection signal="pressed" from="Fish Options/Yellow Fish" to="." method="_on_yellow_fish_pressed"]

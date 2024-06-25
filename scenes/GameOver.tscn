@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c32r550we2wy6"]
+[gd_scene load_steps=4 format=3 uid="uid://dx74tcidl433t"]
 
-[ext_resource type="Script" path="res://scenes/GameOverScript.gd" id="1_vdksv"]
+[ext_resource type="Script" path="res://scripts/GameOverScript.gd" id="1_r735x"]
+[ext_resource type="FontFile" uid="uid://bmv3yeus5natr" path="res://assets/fonts/PixelOperator8.ttf" id="2_07rqk"]
 [ext_resource type="Texture2D" uid="uid://hevyokw7mcp6" path="res://assets/game_over.png" id="2_75svc"]
 
 [node name="GameOver" type="Control"]
@@ -12,7 +13,7 @@ anchor_bottom = 1.0
 offset_right = -0.540039
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_vdksv")
+script = ExtResource("1_r735x")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -27,6 +28,7 @@ offset_left = 496.0
 offset_top = 356.0
 offset_right = 625.0
 offset_bottom = 419.0
+theme_override_fonts/font = ExtResource("2_07rqk")
 text = "Play again"
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -8,11 +8,11 @@ radius = 40.1622
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_74uv6")
-move_speed = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 2)
 shape = SubResource("CircleShape2D_rr360")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
