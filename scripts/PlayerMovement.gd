@@ -2,7 +2,6 @@ extends Fish
 
 var player_speed = 1000
 var edge_of_screen: = Vector2(1920, 1080)
-var growth_per_fish = 0.01
 var fish_scale = 0.08
 @onready var player = $"."
 
@@ -20,4 +19,6 @@ func _process(delta):
 	player.move_and_slide()
 	position.x = clampf(position.x, 0, edge_of_screen.x)
 	position.y = clampf(position.y, 0, edge_of_screen.y)
+	
+	
 	

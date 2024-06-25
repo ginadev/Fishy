@@ -29,7 +29,7 @@ func init_fish(fish : Fish):
 		fish.direction = Vector2(-1, 0) #look left
 		
 		
-	fish.move_speed = randf_range(1, 3)
+	fish.move_speed = randf_range(1, 4)
 	
 	#randomise y
 	var random_y = randf_range(62, 685)

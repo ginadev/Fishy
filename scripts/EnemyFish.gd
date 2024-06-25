@@ -15,7 +15,7 @@ func _ready():
 	#set a direction based on starting pos
 	direction = Vector2(1, 0)
 	#randomize size of fish
-	size = randf_range(0, 3)
+	size = randf_range(0, 4)
 	scale = Vector2(size, size)
 	#change fish scale
 
@@ -37,3 +37,4 @@ func _on_body_entered(body : Node):
 		else:
 			print("Eaten by a bigger fish, size: " + str(size))
 			body.queue_free()
+			_die()

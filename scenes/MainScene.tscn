@@ -13,12 +13,14 @@ gradient = SubResource("Gradient_3j1dl")
 [node name="MainScene" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(557, 322)
-scale = Vector2(5.125, 704)
+position = Vector2(579.896, 333.686)
+rotation = 1.5708
+scale = Vector2(2.83194, 1297.88)
 texture = SubResource("GradientTexture1D_0o7q1")
 
 [node name="Player" parent="." instance=ExtResource("1_xgln7")]
 position = Vector2(666, 298)
+move_speed = 5.0
 
 [node name="FishSpawner" type="Node" parent="."]
 script = ExtResource("3_d65a4")
